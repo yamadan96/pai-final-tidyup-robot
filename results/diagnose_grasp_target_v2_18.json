@@ -1,0 +1,385 @@
+{
+  "rows": [
+    {
+      "episode": 0,
+      "target_color": "red",
+      "target_tray": "A",
+      "success": true,
+      "steps": 233,
+      "min_tcp_dist": {
+        "red": 0.0089,
+        "blue": 0.3817,
+        "green": 0.3098
+      },
+      "displacement": {
+        "red": 0.2656,
+        "blue": 0.0001,
+        "green": 0.0001
+      },
+      "nearest_block": "red",
+      "most_moved_block": "red",
+      "approached_target": true,
+      "moved_target": true
+    },
+    {
+      "episode": 1,
+      "target_color": "red",
+      "target_tray": "B",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.189,
+        "blue": 0.0078,
+        "green": 0.2064
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.1817,
+        "green": 0.0001
+      },
+      "nearest_block": "blue",
+      "most_moved_block": "blue",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 2,
+      "target_color": "blue",
+      "target_tray": "A",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.1272,
+        "blue": 0.0748,
+        "green": 0.0005
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0001,
+        "green": 0.5881
+      },
+      "nearest_block": "green",
+      "most_moved_block": "green",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 3,
+      "target_color": "blue",
+      "target_tray": "B",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.0502,
+        "blue": 0.0833,
+        "green": 0.243
+      },
+      "displacement": {
+        "red": 0.008,
+        "blue": 0.0013,
+        "green": 0.0001
+      },
+      "nearest_block": "red",
+      "most_moved_block": "red",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 4,
+      "target_color": "green",
+      "target_tray": "A",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.3815,
+        "blue": 0.0963,
+        "green": 0.0297
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0001,
+        "green": 0.0146
+      },
+      "nearest_block": "green",
+      "most_moved_block": "green",
+      "approached_target": true,
+      "moved_target": false
+    },
+    {
+      "episode": 5,
+      "target_color": "green",
+      "target_tray": "B",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.187,
+        "blue": 0.0237,
+        "green": 0.1226
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0214,
+        "green": 0.0001
+      },
+      "nearest_block": "blue",
+      "most_moved_block": "blue",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 6,
+      "target_color": "red",
+      "target_tray": "A",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.231,
+        "blue": 0.1379,
+        "green": 0.0214
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0001,
+        "green": 0.0409
+      },
+      "nearest_block": "green",
+      "most_moved_block": "green",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 7,
+      "target_color": "red",
+      "target_tray": "B",
+      "success": true,
+      "steps": 246,
+      "min_tcp_dist": {
+        "red": 0.0124,
+        "blue": 0.3276,
+        "green": 0.1682
+      },
+      "displacement": {
+        "red": 0.5848,
+        "blue": 0.0001,
+        "green": 0.0001
+      },
+      "nearest_block": "red",
+      "most_moved_block": "red",
+      "approached_target": true,
+      "moved_target": true
+    },
+    {
+      "episode": 8,
+      "target_color": "blue",
+      "target_tray": "A",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.0493,
+        "blue": 0.2946,
+        "green": 0.1372
+      },
+      "displacement": {
+        "red": 0.0082,
+        "blue": 0.0001,
+        "green": 0.0001
+      },
+      "nearest_block": "red",
+      "most_moved_block": "red",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 9,
+      "target_color": "blue",
+      "target_tray": "B",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.081,
+        "blue": 0.2386,
+        "green": 0.1922
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0001,
+        "green": 0.0001
+      },
+      "nearest_block": "red",
+      "most_moved_block": "blue",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 10,
+      "target_color": "green",
+      "target_tray": "A",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.2165,
+        "blue": 0.1314,
+        "green": 0.0447
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0001,
+        "green": 0.0324
+      },
+      "nearest_block": "green",
+      "most_moved_block": "green",
+      "approached_target": true,
+      "moved_target": true
+    },
+    {
+      "episode": 11,
+      "target_color": "green",
+      "target_tray": "B",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.0302,
+        "blue": 0.1756,
+        "green": 0.2378
+      },
+      "displacement": {
+        "red": 0.0078,
+        "blue": 0.0001,
+        "green": 0.0001
+      },
+      "nearest_block": "red",
+      "most_moved_block": "red",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 12,
+      "target_color": "red",
+      "target_tray": "A",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.0791,
+        "blue": 0.0379,
+        "green": 0.2163
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0145,
+        "green": 0.0001
+      },
+      "nearest_block": "blue",
+      "most_moved_block": "blue",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 13,
+      "target_color": "red",
+      "target_tray": "B",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.0837,
+        "blue": 0.2843,
+        "green": 0.0953
+      },
+      "displacement": {
+        "red": 0.0026,
+        "blue": 0.0001,
+        "green": 0.0027
+      },
+      "nearest_block": "red",
+      "most_moved_block": "green",
+      "approached_target": true,
+      "moved_target": false
+    },
+    {
+      "episode": 14,
+      "target_color": "blue",
+      "target_tray": "A",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.0241,
+        "blue": 0.167,
+        "green": 0.0919
+      },
+      "displacement": {
+        "red": 0.0266,
+        "blue": 0.0001,
+        "green": 0.006
+      },
+      "nearest_block": "red",
+      "most_moved_block": "red",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 15,
+      "target_color": "blue",
+      "target_tray": "B",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.2501,
+        "blue": 0.0339,
+        "green": 0.0374
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0106,
+        "green": 0.0359
+      },
+      "nearest_block": "blue",
+      "most_moved_block": "green",
+      "approached_target": true,
+      "moved_target": false
+    },
+    {
+      "episode": 16,
+      "target_color": "green",
+      "target_tray": "A",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.0482,
+        "blue": 0.1078,
+        "green": 0.1877
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0004,
+        "green": 0.0001
+      },
+      "nearest_block": "red",
+      "most_moved_block": "blue",
+      "approached_target": false,
+      "moved_target": false
+    },
+    {
+      "episode": 17,
+      "target_color": "green",
+      "target_tray": "B",
+      "success": false,
+      "steps": 400,
+      "min_tcp_dist": {
+        "red": 0.1883,
+        "blue": 0.1743,
+        "green": 0.0376
+      },
+      "displacement": {
+        "red": 0.0001,
+        "blue": 0.0001,
+        "green": 0.0171
+      },
+      "nearest_block": "green",
+      "most_moved_block": "green",
+      "approached_target": true,
+      "moved_target": false
+    }
+  ],
+  "approached_target": 7,
+  "moved_target": 3,
+  "n": 18
+}

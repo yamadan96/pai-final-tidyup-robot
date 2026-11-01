@@ -34,6 +34,10 @@ def main() -> int:
     p.add_argument("--camera-preset", default="tight", choices=sorted(CAMERA_PRESETS))
     p.add_argument("--temporal-ensemble", type=float, default=0.01)
     p.add_argument("--json-out", type=Path, default=Path("outputs/diag_grasp_target.json"))
+    p.add_argument("--goal-cue", action="store_true",
+                   help="観測画像にゴールのマーカーを描き込む（学習データと揃える）")
+    p.add_argument("--goal-repeat", type=int, default=None,
+                   help="state のゴール one-hot の繰り返し回数（既定: checkpoint から自動判定）")
     args = p.parse_args()
 
     from lerobot.policies.act.modeling_act import ACTPolicy, ACTTemporalEnsembler
@@ -54,8 +58,17 @@ def main() -> int:
         preprocessor_overrides={"device_processor": {"device": str(device)}},
     )
 
+    # state の次元から goal_repeat を逆算する（学習時との食い違いを防ぐ）
+    state_dim = int(policy.config.input_features["observation.state"].shape[0])
+    if args.goal_repeat is None:
+        if (state_dim - 8) % 5 != 0:
+            raise SystemExit(f"state_dim={state_dim} からゴールの繰り返し回数を決められない")
+        args.goal_repeat = (state_dim - 8) // 5
+    print(f"state_dim={state_dim} goal_repeat={args.goal_repeat} goal_cue={args.goal_cue}")
+
     env = TidyUpEnv(seed=args.seed, image_size=args.image_size,
-                    max_steps=args.max_steps, camera_preset=args.camera_preset)
+                    max_steps=args.max_steps, camera_preset=args.camera_preset,
+                    goal_cue=args.goal_cue, goal_repeat=args.goal_repeat)
     combos = [(c, t) for c in COLORS for t in TRAYS]
     rows = []
 
