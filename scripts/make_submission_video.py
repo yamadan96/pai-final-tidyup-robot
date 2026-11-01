@@ -209,7 +209,8 @@ def section_expert(model: str, seed: int) -> list[np.ndarray]:
             "減衰最小二乗 IK + 8 フェーズの状態機械",
             "接近 → 降下 → 把持 → 持ち上げ → 搬送 → 設置 → 解放 → 退避",
             "重力たわみ 8.6 mm を積分補正で打ち消す",
-            "300 本中 294 本成功（98.0%）: これが模倣学習の教師データ",
+            "300 本中 300 本成功（100%）",
+            "ノイズを混ぜて集め直した 294 本が模倣学習の教師データ",
         ],
         n_frames=sec(5.0),
         note="この方策は学習したものではなく、手で書いた制御器",
@@ -240,7 +241,8 @@ def section_act(args) -> list[np.ndarray]:
         "③ 模倣学習（ACT）で置き換える",
         [
             "294 本・66,815 フレームを LeRobot 形式に変換",
-            "Action Chunking Transformer（ResNet18 × 2 + Transformer, 51.6M）",
+            "Action Chunking Transformer（51.6M パラメータ）",
+            "ResNet18 を 2 本 + Transformer",
             "入力: 俯瞰 160×160 + 斜め前方 160×160 + 関節 8 + ゴール",
             "出力: 100 ステップ分の関節指令（時間アンサンブルで混合）",
             f"学習: {args.train_steps} ステップ / Apple M 系 GPU (MPS)",
@@ -259,7 +261,7 @@ def section_act(args) -> list[np.ndarray]:
         goal_repeat=args.goal_repeat,
     )
     tasks = [{"color": c, "tray": t} for c, t in args.act_goals]
-    header = "指示: 「{} ブロックを{}に入れて」"
+    header = "指示: 「{}ブロックを{}に入れて」"
     results = []
     for task in tasks:
         h = header.format(COLOR_JA[task["color"]], TRAY_JA[task["tray"]])

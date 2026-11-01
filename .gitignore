@@ -10,3 +10,7 @@ outputs/
 
 # OS
 .DS_Store
+
+# 生成物（提出時にファイル名へアカウント名が入るため公開リポジトリには含めない）
+report/*.pdf
+report/*.html
