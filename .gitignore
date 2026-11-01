@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# 収集データ・学習済み重み・中間動画はサイズが大きいので公開リポジトリには入れない
+# （再現手順は README に記載。評価結果の JSON は results/ に置く）
+outputs/
+
+# OS
+.DS_Store

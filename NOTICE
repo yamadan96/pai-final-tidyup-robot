@@ -1,0 +1,9 @@
+本リポジトリには、以下のサードパーティ資産を同梱しています。
+
+- assets/franka_emika_panda/
+  Google DeepMind MuJoCo Menagerie の Franka Emika Panda モデル
+  https://github.com/google-deepmind/mujoco_menagerie
+  ライセンス: Apache License 2.0（assets/franka_emika_panda/LICENSE を参照）
+  変更点: 本課題用のシーン tidyup_scene.xml を同ディレクトリに追加（元のモデルファイルは未変更）
+
+本リポジトリ自身のコードは Apache License 2.0 で公開します。

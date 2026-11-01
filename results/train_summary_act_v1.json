@@ -1,0 +1,17 @@
+{
+  "steps": 100000,
+  "batch_size": 8,
+  "device": "mps",
+  "episodes": 300,
+  "frames": 62575,
+  "params_M": 51.58,
+  "elapsed_s": 11120.4,
+  "step_per_s": 8.992,
+  "loss_first": 75.644,
+  "loss_last": 0.0589,
+  "loss_window": 50,
+  "loss_avg_first50": 15.0649,
+  "loss_avg_last50": 0.0517,
+  "checkpoint": "outputs/checkpoints/act/100000/pretrained_model",
+  "train_log": "outputs/checkpoints/act/train_log.csv"
+}

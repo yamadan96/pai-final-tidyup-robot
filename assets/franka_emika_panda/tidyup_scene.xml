@@ -1,0 +1,82 @@
+<mujoco model="tidyup panda">
+  <include file="panda.xml"/>
+
+  <statistic center="0.4 0 0.2" extent="1.0"/>
+  <visual>
+    <global offwidth="960" offheight="720" azimuth="140" elevation="-25"/>
+    <headlight diffuse="0.5 0.5 0.5" ambient="0.35 0.35 0.35" specular="0 0 0"/>
+    <quality shadowsize="2048"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.35 0.45 0.6" rgb2="0.05 0.08 0.12" width="512" height="3072"/>
+    <texture type="2d" name="deskplane" builtin="checker" mark="edge" rgb1="0.22 0.24 0.28" rgb2="0.27 0.29 0.33"
+             markrgb="0.5 0.5 0.5" width="300" height="300"/>
+    <material name="deskmat" texture="deskplane" texuniform="true" texrepeat="4 4" reflectance="0.05"/>
+    <material name="traymat" rgba="0.75 0.75 0.78 1" reflectance="0.1"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0.5 0 1.6" dir="0 0 -1" directional="true" diffuse="0.6 0.6 0.6"/>
+    <geom name="desk" type="plane" size="1.2 1.2 0.01" material="deskmat"/>
+
+    <!-- ===== wide preset (旧設定): 全体が入るが作業領域が小さく写る ===== -->
+    <!-- overhead camera -->
+    <camera name="top" pos="0.55 0.0 0.95" xyaxes="0 -1 0 1 0 0" fovy="58"/>
+    <!-- front/diagonal camera for the video -->
+    <camera name="front" pos="1.35 -0.75 0.75" xyaxes="0.5 0.87 0 -0.35 0.2 0.92" fovy="48"/>
+
+    <!-- ===== tight preset: 作業領域 x[0.38,0.58] y[-0.25,0.25] を画面いっぱいに入れる =====
+         ブロック（一辺 4.4cm）の見かけの大きさを稼ぐため画角を絞ってある。
+         fovy は「作業領域の端に 45deg 傾けて置いたブロックの全 8 頂点が画面内に残る」
+         最小値（余白 = 半画面の 8〜9%）を数値探索して決めた。 -->
+    <camera name="top_tight" pos="0.48 0.0 0.95" xyaxes="0 -1 0 1 0 0" fovy="38"/>
+    <!-- 斜め前方から作業領域中心 (0.48, 0, 0.05) を見る（top と相補的な視差を与える） -->
+    <camera name="front_tight" pos="1.10 -0.50 0.62"
+            xyaxes="0.6276 0.7782 0 -0.4529 0.3653 0.8130" fovy="38"/>
+
+    <!-- blocks: red / blue / green -->
+    <body name="block_red" pos="0.45 -0.18 0.025">
+      <freejoint name="block_red_free"/>
+      <geom name="block_red" type="box" size="0.022 0.022 0.025" rgba="0.85 0.15 0.15 1"
+            condim="4" friction="1.2 0.02 0.001" solref="0.008 1" mass="0.05"/>
+    </body>
+    <body name="block_blue" pos="0.52 0.0 0.025">
+      <freejoint name="block_blue_free"/>
+      <geom name="block_blue" type="box" size="0.022 0.022 0.025" rgba="0.15 0.3 0.9 1"
+            condim="4" friction="1.2 0.02 0.001" solref="0.008 1" mass="0.05"/>
+    </body>
+    <body name="block_green" pos="0.45 0.18 0.025">
+      <freejoint name="block_green_free"/>
+      <geom name="block_green" type="box" size="0.022 0.022 0.025" rgba="0.15 0.7 0.25 1"
+            condim="4" friction="1.2 0.02 0.001" solref="0.008 1" mass="0.05"/>
+    </body>
+
+    <!-- tray A (left) and tray B (right): thin plates with low walls -->
+    <body name="tray_a" pos="0.30 0.38 0.0">
+      <geom type="box" size="0.085 0.085 0.004" pos="0 0 0.004" material="traymat"/>
+      <geom type="box" size="0.085 0.005 0.018" pos="0  0.085 0.018" material="traymat"/>
+      <geom type="box" size="0.085 0.005 0.018" pos="0 -0.085 0.018" material="traymat"/>
+      <geom type="box" size="0.005 0.085 0.018" pos="0.085 0 0.018" material="traymat"/>
+      <geom type="box" size="0.005 0.085 0.018" pos="-0.085 0 0.018" material="traymat"/>
+      <site name="tray_a_center" pos="0 0 0.05" size="0.01" rgba="1 1 0 0"/>
+    </body>
+    <body name="tray_b" pos="0.30 -0.38 0.0">
+      <geom type="box" size="0.085 0.085 0.004" pos="0 0 0.004" material="traymat"/>
+      <geom type="box" size="0.085 0.005 0.018" pos="0  0.085 0.018" material="traymat"/>
+      <geom type="box" size="0.085 0.005 0.018" pos="0 -0.085 0.018" material="traymat"/>
+      <geom type="box" size="0.005 0.085 0.018" pos="0.085 0 0.018" material="traymat"/>
+      <geom type="box" size="0.005 0.085 0.018" pos="-0.085 0 0.018" material="traymat"/>
+      <site name="tray_b_center" pos="0 0 0.05" size="0.01" rgba="1 1 0 0"/>
+    </body>
+  </worldbody>
+
+  <keyframe>
+    <key name="start"
+         qpos="0 -0.4 0 -2.2 0 1.9 0.785 0.04 0.04
+               0.45 -0.18 0.025 1 0 0 0
+               0.52 0.0 0.025 1 0 0 0
+               0.45 0.18 0.025 1 0 0 0"
+         ctrl="0 -0.4 0 -2.2 0 1.9 0.785 255"/>
+  </keyframe>
+</mujoco>

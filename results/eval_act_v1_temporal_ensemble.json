@@ -1,0 +1,85 @@
+{
+  "checkpoint": "outputs/checkpoints/act/100000/pretrained_model",
+  "episodes": 6,
+  "overall_success_rate": 0.1667,
+  "n_success": 1,
+  "per_goal": {
+    "red->A": {
+      "n": 1,
+      "success": 0,
+      "rate": 0.0
+    },
+    "red->B": {
+      "n": 1,
+      "success": 0,
+      "rate": 0.0
+    },
+    "blue->A": {
+      "n": 1,
+      "success": 0,
+      "rate": 0.0
+    },
+    "blue->B": {
+      "n": 1,
+      "success": 0,
+      "rate": 0.0
+    },
+    "green->A": {
+      "n": 1,
+      "success": 1,
+      "rate": 1.0
+    },
+    "green->B": {
+      "n": 1,
+      "success": 0,
+      "rate": 0.0
+    }
+  },
+  "episodes_detail": [
+    {
+      "episode": 0,
+      "color": "red",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 1,
+      "color": "red",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 2,
+      "color": "blue",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 3,
+      "color": "blue",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 4,
+      "color": "green",
+      "tray": "A",
+      "success": true,
+      "steps": 195
+    },
+    {
+      "episode": 5,
+      "color": "green",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    }
+  ],
+  "elapsed_s": 101.4,
+  "seed": 777,
+  "max_steps": 400
+}

@@ -1,0 +1,171 @@
+{
+  "checkpoint": "outputs/checkpoints/act_v2/100000/pretrained_model",
+  "episodes": 18,
+  "overall_success_rate": 0.1111,
+  "n_success": 2,
+  "per_goal": {
+    "red->A": {
+      "n": 3,
+      "success": 1,
+      "rate": 0.3333
+    },
+    "red->B": {
+      "n": 3,
+      "success": 1,
+      "rate": 0.3333
+    },
+    "blue->A": {
+      "n": 3,
+      "success": 0,
+      "rate": 0.0
+    },
+    "blue->B": {
+      "n": 3,
+      "success": 0,
+      "rate": 0.0
+    },
+    "green->A": {
+      "n": 3,
+      "success": 0,
+      "rate": 0.0
+    },
+    "green->B": {
+      "n": 3,
+      "success": 0,
+      "rate": 0.0
+    }
+  },
+  "episodes_detail": [
+    {
+      "episode": 0,
+      "color": "red",
+      "tray": "A",
+      "success": true,
+      "steps": 233
+    },
+    {
+      "episode": 1,
+      "color": "red",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 2,
+      "color": "blue",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 3,
+      "color": "blue",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 4,
+      "color": "green",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 5,
+      "color": "green",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 6,
+      "color": "red",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 7,
+      "color": "red",
+      "tray": "B",
+      "success": true,
+      "steps": 246
+    },
+    {
+      "episode": 8,
+      "color": "blue",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 9,
+      "color": "blue",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 10,
+      "color": "green",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 11,
+      "color": "green",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 12,
+      "color": "red",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 13,
+      "color": "red",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 14,
+      "color": "blue",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 15,
+      "color": "blue",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 16,
+      "color": "green",
+      "tray": "A",
+      "success": false,
+      "steps": 400
+    },
+    {
+      "episode": 17,
+      "color": "green",
+      "tray": "B",
+      "success": false,
+      "steps": 400
+    }
+  ],
+  "elapsed_s": 172.3,
+  "seed": 777,
+  "max_steps": 400,
+  "camera_preset": "tight",
+  "image_size": 160
+}
